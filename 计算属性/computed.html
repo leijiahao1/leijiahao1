@@ -1,3 +1,13 @@
+<!--
+ * @Author: leijiahao leijiahao@tydic.com
+ * @Date: 2022-06-09 14:14:14
+ * @LastEditors: leijiahao leijiahao@tydic.com
+ * @LastEditTime: 2022-06-10 14:52:40
+ * @FilePath: \vue\计算属性\computed.html
+ * @Description: 
+ * 
+ * Copyright (c) 2022 by leijiahao leijiahao@tydic.com, All Rights Reserved. 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +18,16 @@
 </head>
 <script type="text/javascript" src='../js/vue.js'></script>
 <body>
+    <!-- 
+        computed的功能可以使用watch替代
+        watch的功能computed不能完全取代    watch可以进行异步操作
+
+     -->
+    <!--
+        被VUE管理的函数，写成普通函数 function(){}保证指向为对应VUE实例
+        不被管理的函数(定时器||ajax的回调函数等)  写成箭头函数确保指向
+      -->
+
     <div id="root">
         <input v-model="name" @keyup.enter.exact='alert'/>
         <div>{{age}}</div>
