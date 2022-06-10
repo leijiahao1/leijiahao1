@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算属性</title>
+</head>
+<script type="text/javascript" src='../js/vue.js'></script>
+<body>
+    <div id="root">
+        <input v-model="name" @keyup.enter.exact='alert'/>
+        <div>{{age}}</div>
+        <div class="sda">{{fullName}}</div>
+        <div @click="" class="sda">{{getFullName()}}</div>
+    </div>
+</body>
+<script type="text/javascript">
+   Vue.config.productionTip = false
+   const vm=new Vue({
+       el:'#root',
+       data(){
+           return {
+               name:'lei',
+               age:123
+           }
+       },
+       methods: {
+           getFullName(){
+               return this.name+'-'+this.age
+           },
+           alert(){
+               alert(111)
+           }
+       },
+       computed:{
+           fullName(){
+               return this.name+'-'+this.age
+           }
+       }
+   })
+</script>
+</html>
